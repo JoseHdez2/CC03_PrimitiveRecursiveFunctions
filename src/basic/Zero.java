@@ -9,10 +9,12 @@ import structs.Tuple;
  */
 public class Zero {
 
-    public static Tuple __(Tuple input) {
-        Tuple output = new Tuple();
-        output.add(0);
-        return output;
+    public static Integer __(Integer input){
+        return 0;
+    }
+    
+    public static Integer __(Tuple input) {
+        return 0;
     }
 
 }
