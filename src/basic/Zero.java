@@ -1,7 +1,5 @@
 package basic;
 
-import structs.Tuple;
-
 /**
  * @author jose
  * 
@@ -9,11 +7,7 @@ import structs.Tuple;
  */
 public class Zero {
 
-    public static Integer __(Integer input){
-        return 0;
-    }
-    
-    public static Integer __(Tuple input) {
+    public static Integer __(Object... objects){
         return 0;
     }
 

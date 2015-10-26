@@ -1,10 +1,15 @@
 package main;
 
-import structs.Tuple;
-
 public abstract class Sys {
     public static void out(Object... objects){
-        Tuple tuple = new Tuple(objects);
-        System.out.println(tuple);
+        int size = 0;
+        for (Object ob : objects) size++;
+        String str = "[";
+        for (int i = 0; i < size; i++){
+            str += String.valueOf(((Integer) objects[i]));
+            if (i != size-1) str += ",";
+        }
+        str += "]";
+        System.out.println(str);
     }
 }
