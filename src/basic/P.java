@@ -1,5 +1,6 @@
 package basic;
 
+import abs.PrimitiveRecursiveFunction;
 import structs.Tuple;
 
 /**
@@ -7,21 +8,32 @@ import structs.Tuple;
  *
  *  Basic Primitive Recursive Function: Projection.
  */
-public class P {
+public class P extends PrimitiveRecursiveFunction{
 
-//    TODO: What about the error cases?
+    /*
+     * Same code for every PRF.
+     * Since static function inheritance is not allowed in Java.
+     */
     
-    // == only works for numbers between -128 and 127 
+    public static Tuple __( Object... inputs){
+        Tuple input = new Tuple(inputs);
+        try {
+            return treatInput(input);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    // TODO: == only works for numbers between -128 and 127 
     
-    public static Integer __(Integer n, Integer i, Integer input) {
-//        if (!(n == 1)) throw new Exception("Projection: Incorrect n parameter");
-//        if (!(i == 1)) throw new Exception("Projection: Incorrect i parameter");
-      return input;
-  }
-    
-    public static Integer __(Integer n, Integer i, Tuple input) {
-//        if (n != input.size()) throw new Exception("Projection: Incorrect n parameter");
-//        if (i < 0 || i > input.size()-1) throw new Exception("Projection: Incorrect i parameter");
-        return input.get(i);
+    private static Tuple treatInput(Tuple input) throws Exception {
+        if (input.size() < 3) throw new Exception("Incorrect input size.");
+        int n = input.get(input.get(0));
+        int i = input.get(input.get(1));
+        Tuple inputTuple = new Tuple();
+        if (n != input.size()) throw new Exception("Invalid n parameter.");
+        if (!(0 < i || i < input.size()-1)) throw new Exception("Invalid i parameter.");
+        return null;
     }
 }
