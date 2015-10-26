@@ -47,7 +47,7 @@ public abstract class PrimitiveRecursiveFunction {
      */
     public Integer __(Object... input){
         try{
-            validateTokenNum(input);    // wow damn haha
+            validateTokenNum(input);
             return treatInput(input);
         } catch (Exception e) {
             e.printStackTrace();
