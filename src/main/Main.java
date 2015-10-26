@@ -15,8 +15,8 @@ public class Main {
         // Constructor PRFs
         Composition o = new Composition();
         
-        Sys.out(P.__(2,1,3,4));
-        Sys.out(succ.__(2,1,3,4));
+        Sys.out(P.__(2,2,3,4));
+        Sys.out(succ.__(2));
         Sys.out(zero.__(2,1,3,4));
     }
 }

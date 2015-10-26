@@ -3,7 +3,7 @@ package abs;
 
 public abstract class PrimitiveRecursiveFunction {
  
-    protected int inputTokenNum = 0;
+    protected int inputTokenNum;
     
     /*
      * Input token number validation.
@@ -16,8 +16,7 @@ public abstract class PrimitiveRecursiveFunction {
      * @throws Exception
      */
     protected void validateTokenNum(Object... input) throws Exception{
-        inputTokenNum = 0;
-        for (Object ob : input) inputTokenNum++;
+        inputTokenNum = input.length;
         if (inputTokenNum < expectedTokenMin()){
             String str = String.format("%d tokens, expected at least %d.", inputTokenNum, expectedTokenMin());
             throw new Exception(str);
@@ -48,7 +47,7 @@ public abstract class PrimitiveRecursiveFunction {
      */
     public Integer __(Object... input){
         try{
-            validateTokenNum();
+            validateTokenNum(input);    // wow damn haha
             return treatInput(input);
         } catch (Exception e) {
             e.printStackTrace();
